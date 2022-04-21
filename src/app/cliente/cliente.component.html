@@ -1,0 +1,76 @@
+<main>
+    <section class="informacion">
+      <h1>Registro de Clientes </h1>
+      <br>
+      <form class="form" [formGroup]="clienteForm">
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Nit</mat-label>
+          <input type="number" matInput formControlName="nit" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="clienteForm.controls['nit'].hasError('required')">
+            Nit es <strong>obligatorio</strong>
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input type="text" matInput formControlName="nombre" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="clienteForm.controls['nombre'].hasError('required')">
+            Nombre es <strong>obligatorio</strong>
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Direccion</mat-label>
+          <input type="text" matInput formControlName="Direccion" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="clienteForm.controls['direccion'].hasError('required')">
+            Direccion es <strong>obligatorio</strong>
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Pais</mat-label>
+          <input type="text" matInput formControlName="pais" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="clienteForm.controls['pais'].hasError('required')">
+            Pais es <strong>obligatorio</strong>
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button (click)="onClickCrear()" class="demo-button" [disabled]="!clienteForm.valid">
+          Registrar Cliente
+        </button>
+      </form>
+    </section>   
+  </main>
+
+    <br>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+  
+      <ng-container matColumnDef="nit">
+        <th mat-header-cell *matHeaderCellDef> NIT </th>
+        <td mat-cell *matCellDef="let element"> {{element.nit}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="direccion">
+        <th mat-header-cell *matHeaderCellDef> Direccion </th>
+        <td mat-cell *matCellDef="let element"> {{element.direccion}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="pais">
+        <th mat-header-cell *matHeaderCellDef> Pais </th>
+        <td mat-cell *matCellDef="let element"> {{element.pais}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <section>
+      <br>
+    </section>
+  
