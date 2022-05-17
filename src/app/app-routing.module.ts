@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClienteComponent } from './cliente/cliente.component';
 import { DriverComponent } from './driver/driver.component';
+import { ModuloComponent } from './modulo/modulo.component';
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 
@@ -20,6 +21,10 @@ const routes: Routes = [{
 {
   path: 'driver',
   component: DriverComponent
+},
+{
+  path: 'modulo',
+  component: ModuloComponent
 },
 {
   path: '**',

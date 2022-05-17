@@ -24,12 +24,12 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class DriverComponent implements OnInit {
   driverForm = new FormGroup({
     codigo : new FormControl('', [Validators.required]),
-    referencia : new FormControl('', [Validators.required]),
+    descripcion : new FormControl('', [Validators.required]),
   });
 
   matcher = new MyErrorStateMatcher();
 
-  displayedColumns: string[] = ['codigo', 'referencia'];
+  displayedColumns: string[] = ['codigo', 'descripcion'];
   dataSource: any;
 
   @ViewChild(MatTable) table!: MatTable<Driver>;
