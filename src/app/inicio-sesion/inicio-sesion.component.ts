@@ -9,7 +9,7 @@ import { Login } from './login';
   templateUrl: './inicio-sesion.component.html',
   styleUrls: ['./inicio-sesion.component.scss']
 })
-export class InicioSesionComponent implements OnInit {
+export class InicioSesionComponent  {
 
   login:Login = new Login();
 
@@ -20,9 +20,6 @@ export class InicioSesionComponent implements OnInit {
   });
 
   constructor(public http: HttpClient, private loginService: LoginService) { }
-
-  ngOnInit(): void {
-  }
 
   inciarSesion(): void
   {

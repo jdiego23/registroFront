@@ -5,11 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './pagina-principal.component.html',
   styleUrls: ['./pagina-principal.component.scss']
 })
-export class PaginaPrincipalComponent implements OnInit {
+export class PaginaPrincipalComponent {
 
   constructor() { }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+ 
 
 }

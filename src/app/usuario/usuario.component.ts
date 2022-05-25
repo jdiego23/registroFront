@@ -22,7 +22,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   templateUrl: './usuario.component.html',
   styleUrls: ['./usuario.component.scss']
 })
-export class UsuarioComponent implements OnInit {
+export class UsuarioComponent  {
 
   usuarioForm = new FormGroup({
     nombre : new FormControl('', [Validators.required]),
@@ -42,10 +42,6 @@ export class UsuarioComponent implements OnInit {
     this.dataSource = new MatTableDataSource();
   }
   
-  ngOnInit(): void {
-    this.listar();
-  }
-
   private listar() {
     this.usuarioService.getAll().subscribe(respuesta => {
       this.dataSource = respuesta;

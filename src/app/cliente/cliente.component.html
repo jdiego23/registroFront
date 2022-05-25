@@ -22,7 +22,7 @@
         <br>
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Direccion</mat-label>
-          <input type="text" matInput formControlName="Direccion" [errorStateMatcher]="matcher">
+          <input type="text" matInput formControlName="direccion" [errorStateMatcher]="matcher">
           <mat-error *ngIf="clienteForm.controls['direccion'].hasError('required')">
             Direccion es <strong>obligatorio</strong>
           </mat-error>
