@@ -1,0 +1,49 @@
+<main>
+    <section class="informacion">
+      <h1>Registro de Productos </h1>
+      <br>
+      <form class="form" [formGroup]="productoForm">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>codigo</mat-label>
+          <input type="number" matInput formControlName="codigo" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="productoForm.controls['codigo'].hasError('required')">
+            Codigo es <strong>obligatorio</strong>
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input type="text" matInput formControlName="nombre" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="productoForm.controls['nombre'].hasError('required')">
+            Nombre es <strong>obligatorio</strong>
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>descripcion</mat-label>
+          <input type="text" matInput formControlName="descripcion" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="productoForm.controls['descripcion'].hasError('required')">
+            Descripcion es <strong>obligatorio</strong>
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Modulo</mat-label>
+            <mat-select formControlName="modulo">
+              <mat-option  *ngFor="let item of modulos" [value]="item.descripcion" >{{item.descripcion}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="fill">
+            <mat-label>Driver</mat-label>
+            <mat-select >
+              <mat-option *ngFor="let item of driver" [value]="item">{{item.descripcion}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <br>
+        <button mat-raised-button (click)="onClickCrear()" class="demo-button" >
+          Registrarse
+        </button>
+      </form>
+    </section>
+  </main>
