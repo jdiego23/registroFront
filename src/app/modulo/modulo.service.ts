@@ -10,6 +10,10 @@ const urlApi = 'http://localhost:8081/api/modulo';
 export class ModuloService {
 
   constructor(private http: HttpClient) { }
+  
+  empUrl(): any{
+    return urlApi;
+  }
 
   getAll() : Observable<Modulo> {
     return this.http.get<Modulo>(urlApi);

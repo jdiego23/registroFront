@@ -5,7 +5,7 @@ export class Login implements Respuesta
 
   constructor()
   {
-
+    
   }
     valor!: String;
 }
